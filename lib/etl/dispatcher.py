@@ -1,11 +1,11 @@
 import logging
 import os
 import random
-from lib.etl.app_loads import AppLoadETL
+#from lib.etl.app_loads import AppLoadETL
 from lib.etl.crashes import CrashETL
 from lib.etl.exceptions import ExceptionETL
-from lib.etl.performance import PerformanceMetricsETL
-from lib.etl.transactions import TransactionsETL
+#from lib.etl.performance import PerformanceMetricsETL
+#from lib.etl.transactions import TransactionsETL
 
 
 DATA_ACTION = os.environ.get('DATA_ACTION', 'upload')
@@ -30,11 +30,11 @@ class ETLDispatcher(object):
                                                                 for i in range(min(10, num_events))])
 
     ALL_ETL = {
-        'Aggregates': PerformanceMetricsETL,
+        #'Aggregates': PerformanceMetricsETL,
         'Exception': ExceptionETL,
-        'Transactions': TransactionsETL,
+        #'Transactions': TransactionsETL,
         'Crash': CrashETL,
-        'App Load': AppLoadETL,
+        #'App Load': AppLoadETL,
     }
 
     def handle_etl(self):
